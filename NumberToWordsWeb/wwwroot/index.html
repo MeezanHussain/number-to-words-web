@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Number to Words Converter</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #e0eafc, #cfdef3);
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+      .container {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        padding: 2rem;
+        width: 90%;
+        max-width: 420px;
+        animation: fadeIn 0.6s ease;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      h1 {
+        font-size: 1.8rem;
+        margin: 0 0 1rem 0;
+        text-align: center;
+        color: #333;
+      }
+      input[type="text"] {
+        width: 100%;
+        padding: 0.7rem 1rem;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+        transition: border-color 0.3s ease;
+      }
+      input[type="text"]:focus {
+        outline: none;
+        border-color: #007bff;
+      }
+      button {
+        width: 100%;
+        padding: 0.75rem;
+        font-size: 1rem;
+        background: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.3s ease, transform 0.1s ease;
+      }
+      button:hover {
+        background: #0056b3;
+      }
+      button:active {
+        transform: scale(0.98);
+      }
+      .output {
+        margin-top: 1.2rem;
+        padding: 0.8rem;
+        background: #f8f9fa;
+        border-radius: 8px;
+        min-height: 2.2rem;
+        font-family: "Courier New", monospace;
+        color: #333;
+        white-space: pre-wrap;
+        animation: fadeIn 0.4s ease;
+      }
+      /* Responsive adjustments */
+      @media (max-width: 480px) {
+        h1 {
+          font-size: 1.5rem;
+        }
+        .container {
+          padding: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Number to Words</h1>
+      <input
+        type="text"
+        id="amountInput"
+        placeholder="Enter amount e.g. 123.45"
+      />
+      <button onclick="convert()">Convert</button>
+      <div id="output" class="output"></div>
+    </div>
+
+    <script>
+      function convert() {
+        const amount = document.getElementById("amountInput").value.trim();
+        const outputDiv = document.getElementById("output");
+        if (!amount) {
+          outputDiv.textContent = "Please enter an amount.";
+          return;
+        }
+        fetch(`/api/convert?amount=${encodeURIComponent(amount)}`)
+          .then((response) => {
+            if (!response.ok) {
+              return response.text().then((text) => {
+                throw new Error(text);
+              });
+            }
+            return response.text();
+          })
+          .then((result) => {
+            outputDiv.textContent = result;
+          })
+          .catch((err) => {
+            outputDiv.textContent = `Error: ${err.message}`;
+          });
+      }
+    </script>
+  </body>
+</html>

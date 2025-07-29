@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NumberToWordsWeb", "NumberToWordsWeb.csproj", "{E264550D-673C-20F0-C54B-71EE21C28D5B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E264550D-673C-20F0-C54B-71EE21C28D5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E264550D-673C-20F0-C54B-71EE21C28D5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E264550D-673C-20F0-C54B-71EE21C28D5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E264550D-673C-20F0-C54B-71EE21C28D5B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9A336323-CEEC-4E88-AA9C-03F68A9185D2}
+	EndGlobalSection
+EndGlobal

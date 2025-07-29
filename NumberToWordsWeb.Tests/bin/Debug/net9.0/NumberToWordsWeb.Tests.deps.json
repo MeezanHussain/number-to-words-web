@@ -1,0 +1,39 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "NumberToWordsWeb.Tests/1.0.0": {
+        "dependencies": {
+          "NumberToWordsWeb": "1.0.0"
+        },
+        "runtime": {
+          "NumberToWordsWeb.Tests.dll": {}
+        }
+      },
+      "NumberToWordsWeb/1.0.0": {
+        "runtime": {
+          "NumberToWordsWeb.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "NumberToWordsWeb.Tests/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "NumberToWordsWeb/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
